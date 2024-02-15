@@ -1,0 +1,51 @@
+.container {
+    display: flex;    
+    height: 100vh;  
+  }
+  
+  .container .col {
+    flex: 0.5;
+    height: 55%;
+    background-color: rgb(221, 206, 206);
+
+  }
+  
+  .container .col:nth-child(2)
+  {
+    background-color: rgb(158, 114, 114);
+  }
+  .mat-mdc-radio-button{
+    padding: 0px;
+      background-color: grey;
+      color: red;
+    }
+    .err_msg{
+        color: red;
+        margin-top: -20px;
+        font-size: 14px;
+    }
+    .errmsg{
+      color: red;
+        margin-top: -10px;
+        font-size: 14px;
+    }   
+    section {
+        display: table;
+        margin-top: -220px;
+        color: white;
+        margin-left: 500px;
+      }
+    button:hover{
+        letter-spacing: 3px;
+        background-color: #dc5d19;
+        color:#ffffff;
+        box-shadow: #dc5d19 0px 7px 29px 0px;
+    
+    }
+    button:active{
+        letter-spacing: 3px;
+        background-color: #dc5d19;
+        color:#ffffff;
+        box-shadow: #dc5d19 0px 7px 29px 0px;
+        transform: translateY(10px);
+    }

@@ -1,0 +1,103 @@
+<h3>Employee Data</h3>
+
+<div class="container">
+    <div class="col">
+        <h5>Personal Information</h5>
+        <!-- Personal Info Data -->
+        <form [formGroup]="newTaskForm">
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>First Name</mat-label>
+              <input matInput type="text" formControlName="first_name" [ngClass]="{ 'is-invalid': submitted}"
+                placeholder="Enter your first name">
+            </mat-form-field>
+            <div *ngIf="f.first_name.errors && submitted">
+              <div *ngIf="f.first_name.errors?.required" class="err_msg">First Name is required *</div>
+            </div>
+          </div>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text" formControlName="last_name" [ngClass]="{ 'is-invalid': submitted}"
+                placeholder="Enter your last name" required>
+            </mat-form-field>
+            <div *ngIf="f.last_name.errors && submitted">
+              <div *ngIf="f.last_name.errors?.required" class="err_msg">Last Name is required *</div>
+            </div>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="dob" [ngClass]="{ 'is-invalid': submitted}" required>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div *ngIf="f.dob.errors && submitted">
+              <div *ngIf="f.dob.errors?.required" class="err_msg">DOB is required *</div>
+            </div>
+          </div>
+          <div>
+            <mat-radio-group aria-label="Gender" formControlName="gender" [ngClass]="{ 'is-invalid': submitted}" required>
+              <mat-label>Gender : </mat-label>
+              <mat-radio-button value="male">Male</mat-radio-button>
+              <mat-radio-button value="female">Female</mat-radio-button>
+              <mat-radio-button value="other">Other</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div *ngIf="f.gender.errors && submitted">
+            <div *ngIf="f.gender.errors?.required" class="errmsg">Gender is required *</div>
+          </div>
+          
+        
+          
+        
+        </form>
+
+    </div>
+
+    <!-- General Information -->
+    <div class="col" >
+        <h5>General Information</h5>
+        <div>
+        <mat-form-field>
+            <mat-label>Interests</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option value="reading">Reading</mat-option>
+              <mat-option value="sports">Sports</mat-option>
+              <mat-option value="cooking">Cooking</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>State</mat-label>
+                <mat-select [(value)]="state">
+                  <mat-option value="karnataka">Karnataka</mat-option>
+                  <mat-option value="maharastra">Maharastra</mat-option>
+                  <mat-option value="kerala">Kerala</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Company Information</mat-label>
+                    <mat-select [(value)]="company_information" required>
+                      <mat-option value="angularjs">Angular js</mat-option>
+                      <mat-option value="nodejs">Node js</mat-option>
+                      <mat-option value="flutter">Flutter</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                </div>
+    </div>  
+  </div>
+<!-- Submit Button -->
+  <section style="float: center;">
+    <div class="example-button-row">
+      <button mat-button type="submit" color="primary" (click)="submit()">Submit</button>
+  
+    </div>
+  </section>
+
